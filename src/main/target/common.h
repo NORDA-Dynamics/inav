@@ -85,7 +85,7 @@
 #endif
 
 #define USE_MR_BRAKING_MODE
-#define USE_PITOT
+// #define USE_PITOT
 #define USE_PITOT_ADC
 
 #define USE_DYNAMIC_FILTERS
@@ -187,7 +187,7 @@
 #define USE_TELEMETRY_JETIEXBUS
 // These are rather exotic serial protocols
 #define USE_RX_MSP
-//#define USE_MSP_RC_OVERRIDE
+#define USE_MSP_RC_OVERRIDE
 #define USE_SERIALRX_CRSF
 #define USE_SERIAL_PASSTHROUGH
 #define NAV_MAX_WAYPOINTS       120
