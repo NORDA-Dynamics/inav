@@ -641,6 +641,11 @@ rssiSource_e getRSSISource(void)
     return activeRssiSource;
 }
 
+int16_t rxGetOriginalChannelValue(unsigned channelNumber)
+{
+        return rcChannels[channelNumber].raw;
+}
+
 int16_t rxGetChannelValue(unsigned channelNumber)
 {
     if (LOGIC_CONDITION_GLOBAL_FLAG(LOGIC_CONDITION_GLOBAL_FLAG_OVERRIDE_RC_CHANNEL)) {

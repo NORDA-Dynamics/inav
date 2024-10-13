@@ -609,6 +609,12 @@ static bool mspFcProcessOutCommand(uint16_t cmdMSP, sbuf_t *dst, mspPostProcessF
         }
         break;
 
+    case MSP_RC_RAW:
+        for (int i = 0; i < rxRuntimeConfig.channelCount; i++) {
+            sbufWriteU16(dst, rxGetOriginalChannelValue(i));
+        }
+        break;
+    
     case MSP_ATTITUDE:
         sbufWriteU16(dst, attitude.values.roll);
         sbufWriteU16(dst, attitude.values.pitch);
@@ -892,13 +898,6 @@ static bool mspFcProcessOutCommand(uint16_t cmdMSP, sbuf_t *dst, mspPostProcessF
         sbufWriteU32(dst, currentBatteryProfile->capacity.warning);
         sbufWriteU32(dst, currentBatteryProfile->capacity.critical);
         sbufWriteU8(dst, currentBatteryProfile->capacity.unit);
-        break;
-
-    case MSP_MOTOR_PINS:
-        // FIXME This is hardcoded and should not be.
-        for (int i = 0; i < 8; i++) {
-            sbufWriteU8(dst, i + 1);
-        }
         break;
 
 #ifdef USE_GPS

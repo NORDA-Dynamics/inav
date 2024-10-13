@@ -248,7 +248,7 @@
 #define MSP_RC_TUNING            111    //out message         rc rate, rc expo, rollpitch rate, yaw rate, dyn throttle PID
 #define MSP_ACTIVEBOXES          113    //out message         Active box flags (full width, more than 32 bits)
 #define MSP_MISC                 114    //out message         powermeter trig
-#define MSP_MOTOR_PINS           115    //out message         which pins are in use for motors & servos, for GUI
+#define MSP_RC_RAW               115    //out message         unchanged original rc channels and more
 #define MSP_BOXNAMES             116    //out message         the aux switch names
 #define MSP_PIDNAMES             117    //out message         the PID names
 #define MSP_WP                   118    //out message         get a WP, WP# is in the payload, returns (WP#, lat, lon, alt, flags) WP#0-home, WP#16-poshold
