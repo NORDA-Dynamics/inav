@@ -169,9 +169,10 @@ typedef struct rxRuntimeConfig_s {
 } rxRuntimeConfig_t;
 
 typedef struct rcChannel_s {
-    int16_t raw;        // Value received via RX - [1000;2000]
-    int16_t data;       // Value after processing - [1000;2000]
-    timeMs_t expiresAt; // Time when this value becomes too old and it's discarded
+    int16_t raw_original;   // Value received via RX - [1000;2000]
+    int16_t raw;            // Value received via RX after MSP override - [1000;2000]
+    int16_t data;           // Value after processing - [1000;2000]
+    timeMs_t expiresAt;     // Time when this value becomes too old and it's discarded
 } rcChannel_t;
 
 typedef enum {

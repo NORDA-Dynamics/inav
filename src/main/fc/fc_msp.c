@@ -396,6 +396,7 @@ static bool mspFcProcessOutCommand(uint16_t cmdMSP, sbuf_t *dst, mspPostProcessF
 
         sbufWriteU8(dst, strlen(targetName));
         sbufWriteData(dst, targetName, strlen(targetName));
+        sbufWriteU16(dst, acc.dev.acc_1G);
         break;
     }
 

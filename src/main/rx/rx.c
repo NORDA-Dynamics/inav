@@ -481,7 +481,7 @@ bool calculateRxChannelsAndUpdateFailsafe(timeUs_t currentTimeUs)
         }
 
         // Store as rxRaw
-        rcChannels[channel].raw = sample;
+        rcChannels[channel].raw_original = rcChannels[channel].raw = sample;
 
         // Apply invalid pulse value logic
         if (!isRxPulseValid(sample)) {
@@ -643,7 +643,7 @@ rssiSource_e getRSSISource(void)
 
 int16_t rxGetOriginalChannelValue(unsigned channelNumber)
 {
-        return rcChannels[channelNumber].raw;
+        return rcChannels[channelNumber].raw_original;
 }
 
 int16_t rxGetChannelValue(unsigned channelNumber)
